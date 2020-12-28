@@ -1,0 +1,13 @@
+<%= link_to 'HOME', root_path %>
+<%= link_to 'About' , home_about_path %>
+
+<% if user_signed_in? %>
+<li><%= link_to 'Sign out' , destroy_user_session_path,method: :delete %></li>
+<li><%= link_to 'Edit Profile' , edit_user_registration_path %></li>
+<li><%= link_to 'Friend' , freinds_path %></li>
+<li><%= link_to 'Add Friend' , new_freind_path %></li>
+<% else %>
+<li><%= link_to 'SIGN UP NOW' , new_user_registration_path %></li>
+<li><%= link_to 'Sign In' , new_user_session_path %> </li>
+<%end %>
+<br/>
